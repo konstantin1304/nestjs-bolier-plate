@@ -11,7 +11,7 @@ import { ConfigModule } from '@nestjs/config';
     UsersModule,
     AuthModule,
     MongooseModule.forRoot(
-      'mongodb+srv://leduc1901:melody19@kylecluster.abjzu.mongodb.net/?retryWrites=true&w=majority',
+      'mongodb+srv://zakharchenkokv:11110000Kot@boostdb.efkkvhj.mongodb.net/boost?retryWrites=true&w=majority&appName=BoostDB',
     ),
     ConfigModule.forRoot(),
   ],
