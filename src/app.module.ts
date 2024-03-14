@@ -11,7 +11,7 @@ import { ConfigModule } from '@nestjs/config';
     // UsersModule,
     // AuthModule,
     MongooseModule.forRoot(
-      'mongodb+srv://leduc1901:melody19@kylecluster.abjzu.mongodb.net/?retryWrites=true&w=majority',
+      'mongodb+srv://leduc1901:melody19@kylecluster.abjzu.mongodb.net',
     ),
     ConfigModule.forRoot(),
   ],
