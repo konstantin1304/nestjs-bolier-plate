@@ -11,7 +11,7 @@ import {
   FileTypeValidator,
   MaxFileSizeValidator,
 } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+// import { AuthGuard } from '@nestjs/passport';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { UsersService } from './users.service';
 
@@ -27,19 +27,19 @@ export class UsersController {
     return this.userService.createUser(username, password);
   }
 
-  @UseGuards(AuthGuard('jwt'))
+  // @UseGuards(AuthGuard('jwt'))
   @Get()
   async getAllUsers() {
     return this.userService.getUsers();
   }
 
-  @UseGuards(AuthGuard('jwt'))
+  // @UseGuards(AuthGuard('jwt'))
   @Get(':id')
   async getMe(@Param() params) {
     return this.userService.getMe(params.id);
   }
 
-  @UseGuards(AuthGuard('jwt'))
+  // @UseGuards(AuthGuard('jwt'))
   @Post(':id/upload')
   @UseInterceptors(FileInterceptor('file'))
   async uploadAvatar(
