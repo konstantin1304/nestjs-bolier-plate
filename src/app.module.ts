@@ -4,9 +4,11 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { ProductsModule } from './products/products.module';
+import { AnswersModule } from './answers/answers.module';
 
 @Module({
   imports: [
+    AnswersModule,
     ProductsModule,
     MongooseModule.forRoot(
       'mongodb+srv://zakharchenkokv:11110000Kot@boostdb.efkkvhj.mongodb.net/boost?retryWrites=true&w=majority&appName=BoostDB',
