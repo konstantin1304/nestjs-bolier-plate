@@ -39,8 +39,8 @@ export class AnswersController {
   @Post()
   @HttpCode(HttpStatus.CREATED)
   @Header('Cache-Control', 'none')
-  create(@Body() createProductDto: CreateAnswersDto): Promise<Answer> {
-    return this.answersService.create(createProductDto);
+  create(@Body() createAnswerDto: CreateAnswersDto): Promise<Answer> {
+    return this.answersService.create(createAnswerDto);
   }
 
   @Delete(':answerId')
@@ -50,9 +50,9 @@ export class AnswersController {
 
   @Put(':answerId')
   update(
-    @Body() updateProductDto: UpdateAnswersDto,
+    @Body() updateAnswerDto: UpdateAnswersDto,
     @Param('answerId') answerId: string,
   ): Promise<Answer> {
-    return this.answersService.update(answerId, updateProductDto);
+    return this.answersService.update(answerId, updateAnswerDto);
   }
 }

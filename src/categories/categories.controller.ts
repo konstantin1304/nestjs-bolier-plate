@@ -32,8 +32,8 @@ export class CategoriesController {
   @Post()
   @HttpCode(HttpStatus.CREATED)
   @Header('Cache-Control', 'none')
-  create(@Body() createProductDto: CreateCategoriesDto): Promise<Category> {
-    return this.categoriesService.create(createProductDto);
+  create(@Body() createCategoryDto: CreateCategoriesDto): Promise<Category> {
+    return this.categoriesService.create(createCategoryDto);
   }
 
   @Delete(':categoryId')
@@ -43,9 +43,9 @@ export class CategoriesController {
 
   @Put(':categoryId')
   update(
-    @Body() updateProductDto: UpdateCategoriesDto,
+    @Body() updateCategoryDto: UpdateCategoriesDto,
     @Param('categoryId') categoryId: string,
   ): Promise<Category> {
-    return this.categoriesService.update(categoryId, updateProductDto);
+    return this.categoriesService.update(categoryId, updateCategoryDto);
   }
 }
