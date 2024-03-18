@@ -19,8 +19,8 @@ export class AnswersService {
     return this.answerModel.findOne({ answerId: answerId }).exec();
   }
 
-  async create(productDto: CreateAnswersDto): Promise<Answer> {
-    const newProduct = new this.answerModel(productDto);
+  async create(answerDto: CreateAnswersDto): Promise<Answer> {
+    const newProduct = new this.answerModel(answerDto);
     return newProduct.save();
   }
 
@@ -28,13 +28,10 @@ export class AnswersService {
     return this.answerModel.findOneAndDelete({ answerId: answerId }).exec();
   }
 
-  async update(
-    answerId: string,
-    productDto: UpdateAnswersDto,
-  ): Promise<Answer> {
+  async update(answerId: string, answerDto: UpdateAnswersDto): Promise<Answer> {
     return this.answerModel.findOneAndUpdate(
       { answerId: answerId },
-      productDto,
+      answerDto,
       {
         new: true,
       },
